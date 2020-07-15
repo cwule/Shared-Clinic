@@ -1,0 +1,258 @@
+fileFormatVersion: 2
+guid: 40fe38af1cf3443da915a8ffb4b2fc51
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bone
+    100002: bone_1
+    100004: bone_10
+    100006: bone_11
+    100008: bone_12
+    100010: bone_2
+    100012: bone_2_2
+    100014: bone_3
+    100016: bone_4
+    100018: bone_5
+    100020: bone_6
+    100022: bone_7
+    100024: bone_8
+    100026: bone_9
+    100028: Joint_2
+    100030: Joint_2_10
+    100032: Joint_2_11
+    100034: Joint_2_12
+    100036: Joint_2_13
+    100038: Joint_2_14
+    100040: Joint_2_2
+    100042: Joint_2_3
+    100044: Joint_2_4
+    100046: Joint_2_5
+    100048: Joint_2_6
+    100050: Joint_2_7
+    100052: Joint_2_8
+    100054: Joint_2_9
+    100056: //RootNode
+    100058: lungs_pro
+    100060: Root
+    100062: Skin
+    400000: bone
+    400002: bone_1
+    400004: bone_10
+    400006: bone_11
+    400008: bone_12
+    400010: bone_2
+    400012: bone_2_2
+    400014: bone_3
+    400016: bone_4
+    400018: bone_5
+    400020: bone_6
+    400022: bone_7
+    400024: bone_8
+    400026: bone_9
+    400028: Joint_2
+    400030: Joint_2_10
+    400032: Joint_2_11
+    400034: Joint_2_12
+    400036: Joint_2_13
+    400038: Joint_2_14
+    400040: Joint_2_2
+    400042: Joint_2_3
+    400044: Joint_2_4
+    400046: Joint_2_5
+    400048: Joint_2_6
+    400050: Joint_2_7
+    400052: Joint_2_8
+    400054: Joint_2_9
+    400056: //RootNode
+    400058: lungs_pro
+    400060: Root
+    400062: Skin
+    4300000: lungs_pro
+    7400000: C4D Animation Take
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: lungs_pro
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: ab112e40b9ff162449ab90c7db36d2c6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: C4D Animation Take
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 55
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: lungs_pro
+        weight: 1
+      - path: lungs_pro/Skin
+        weight: 1
+      - path: Root
+        weight: 1
+      - path: Root/bone
+        weight: 1
+      - path: Root/bone/Joint_2_13
+        weight: 1
+      - path: Root/bone_1
+        weight: 1
+      - path: Root/bone_1/Joint_2_12
+        weight: 1
+      - path: Root/bone_2
+        weight: 1
+      - path: Root/bone_2/Joint_2_11
+        weight: 1
+      - path: Root/bone_2_2
+        weight: 1
+      - path: Root/bone_2_2/Joint_2_14
+        weight: 1
+      - path: Root/bone_3
+        weight: 1
+      - path: Root/bone_3/Joint_2_10
+        weight: 1
+      - path: Root/bone_4
+        weight: 1
+      - path: Root/bone_4/Joint_2_9
+        weight: 1
+      - path: Root/bone_5
+        weight: 1
+      - path: Root/bone_5/Joint_2_8
+        weight: 1
+      - path: Root/bone_6
+        weight: 1
+      - path: Root/bone_6/Joint_2_7
+        weight: 1
+      - path: Root/bone_7
+        weight: 1
+      - path: Root/bone_7/Joint_2_6
+        weight: 1
+      - path: Root/bone_8
+        weight: 1
+      - path: Root/bone_8/Joint_2_5
+        weight: 1
+      - path: Root/bone_9
+        weight: 1
+      - path: Root/bone_9/Joint_2_4
+        weight: 1
+      - path: Root/bone_10
+        weight: 1
+      - path: Root/bone_10/Joint_2_3
+        weight: 1
+      - path: Root/bone_11
+        weight: 1
+      - path: Root/bone_11/Joint_2_2
+        weight: 1
+      - path: Root/bone_12
+        weight: 1
+      - path: Root/bone_12/Joint_2
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,356 @@
+<grammar 
+  xmlns="http://www.w3.org/2001/06/grammar"
+  version="1.0"
+  xml:lang="en-US"
+  root="topLevel"
+  mode="voice"
+  tag-format="semantics/1.0" 
+>
+
+  <rule id="topLevel">
+    <one-of>
+      <item>
+        <ruleref uri="#renderCommands" />
+      </item>
+      <item>
+        <ruleref uri="#systemCommands" />
+        <tag> out.Action = rules.systemCommands; </tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="renderCommands">
+    <ruleref uri="#Action" />
+    <item repeat="0-1"> the </item>
+    <ruleref uri="#anatomyWords" />
+    <tag> out.Action = rules.Action; </tag>
+    <tag> out.Parameters = rules.anatomyWords; </tag>
+  </rule>
+
+  <rule id="systemCommands">
+    <one-of>  
+      <item> connect </item>
+      <item> disconnect </item>
+      <item> host session </item>
+      <item> tracking </item>
+      <item> change parent </item>
+      <item> next pose </item>
+      <item> calibrate </item>
+      <item> calibration done </item>
+      <item> toggle display </item>
+      <item> study lung </item>
+      <item> study heart </item>
+      <item> almost done </item>
+    </one-of>
+  </rule>
+
+  <rule id="Action">
+    <one-of>
+      <item>
+        <ruleref uri="#showAction" />
+        <tag> out = "show"; </tag>
+      </item>
+      <item>
+        <ruleref uri="#hideAction" />
+        <tag> out = "hide"; </tag>
+      </item>
+      <item>
+        <ruleref uri="#highlightAction" />
+        <tag> out = "highlight"; </tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="showAction">
+    <one-of>
+      <item> show </item>
+      <item> enable </item>
+      <item> add </item>
+    </one-of>
+    <item repeat="0-1">
+      <one-of>
+        <item> me </item>
+        <item> us </item>
+      </one-of>
+    </item>
+  </rule>
+
+  <rule id="hideAction">
+    <one-of>
+      <item> hide </item>
+      <item> disable </item>
+      <item> remove </item>
+    </one-of>
+  </rule>
+
+  <rule id="highlightAction">
+    <one-of>
+      <item> highlight </item>
+      <item> mark </item>
+    </one-of>
+  </rule>
+
+  <rule id="anatomyWords">
+    <one-of>
+      <item>
+        <ruleref uri="#bodypartsWords" />
+      </item>
+      
+      <item> Skin </item>
+     
+      <item>
+        <ruleref uri="#skeletonAliases" />
+        <tag> out = "Skeleton"; </tag>
+      </item>
+      <item>
+        <ruleref uri="#skeletonWords" />
+      </item>
+
+      <item>
+        <ruleref uri="#circulationAliases" />
+        <tag> out = "Circulation"; </tag>
+      </item>
+
+      <item>
+        <ruleref uri="#circulationWords" />
+      </item>
+      
+      <item> Muscles </item>
+      <item>
+        <ruleref uri="#musclesWords" />
+      </item>
+
+      <item>
+        Organs
+      </item>
+      <item>
+        <ruleref uri="#organsWords" />
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="bodypartsWords">
+    <one-of>
+      <item>
+        Everything
+        <tag> out = ["Skeleton", "Muscles", "Organs", "Skin", "Circulation"]; </tag>
+      </item>
+      <item>
+        Arms
+        <tag> out = ["Muscles/Arms/Left", "Muscles/Arms/Right", "Skeleton/Arms/Left", "Skeleton/Arms/Right"]; </tag>
+      </item>
+      <item>
+        Left Arm
+        <tag> out = ["Muscles/Arms/Left", "Skeleton/Arms/Left"]; </tag>
+      </item>
+      <item>
+        Right Arm
+        <tag> out = ["Muscles/Arms/Right", "Skeleton/Arms/Right"]; </tag>
+      </item>
+      <item>
+        Legs
+        <tag> out = ["Muscles/Legs/Left", "Muscles/Legs/Right", "Skeleton/Legs/Left", "Skeleton/Legs/Right"]; </tag>
+      </item>
+      <item>
+        Left Leg
+        <tag> out = ["Muscles/Legs/Left", "Skeleton/Legs/Left"]; </tag>
+      </item>
+      <item>
+        Right Leg
+        <tag> out = ["Muscles/Legs/Right", "Skeleton/Legs/Right"]; </tag>
+      </item>
+      <item>
+        Torso
+        <tag> out = ["Muscles/Torso", "Skeleton/Torso"]; </tag>
+      </item>
+      <item>
+        Head
+        <tag> out = ["Muscles/Head", "Skeleton/Head"]; </tag>
+      </item>
+    </one-of>
+  </rule>
+ 
+
+  <rule id="organsWords">
+    <one-of>
+      <item>
+        Brain
+        <tag> out = "Organs/Brain"; </tag>
+      </item>
+      <item>
+        Lungs
+        <tag> out = "Organs/Lungs"; </tag>
+      </item>
+      <item>
+        Heart
+        <tag> out = "Organs/Heart"; </tag>
+      </item>
+      <item>
+        Liver
+        <tag> out = "Organs/Liver"; </tag>
+      </item>
+      <item>
+        Kidneys
+        <tag> out = "Organs/Kidneys"; </tag>
+      </item>
+      <item>
+        Face
+        <tag> out = "Organs/Face"; </tag>
+      </item>
+      <item>
+        Diaphragm
+        <tag> out = "Organs/Diaphragm"; </tag>
+      </item>
+      <item>
+        Pulmonary System
+        <tag> out = "Organs/Pulmonary System"; </tag>
+      </item>
+  
+      <item>
+        <one-of>
+          <item> digestive system </item>
+          <item> guts </item>
+        </one-of>
+        <tag> out = "Organs/Digestive System"; </tag>
+      </item>
+      <item>
+        vital organs
+        <ruleref uri="#skeletonAliases" />
+        <tag> out = ["Organs/Liver", "Organs/Digestive System", "Organs/Gall Bladder"]; </tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="musclesWords">
+    <one-of>
+      <item>
+        Arm Muscles
+        <tag> out = ["Muscles/Arms/Left", "Muscles/Arms/Right"]; </tag>
+      </item>
+      <item>
+        Left Arm Muscles
+        <tag> out = "Muscles/Arms/Left"; </tag>
+      </item>
+      <item>
+        Right Arm Muscles
+        <tag> out = "Muscles/Arms/Right"; </tag>
+      </item>
+      <item>
+        Leg Muscles
+        <tag> out = ["Muscles/Legs/Left", "Muscles/Legs/Right"]; </tag>
+      </item>
+      <item>
+        Left Leg Muscles
+        <tag> out = "Muscles/Legs/Left"; </tag>
+      </item>
+      <item>
+        Right Leg Muscles
+        <tag> out = "Muscles/Legs/Right"; </tag>
+      </item>
+      <item>
+        Torso Muscles
+        <tag> out = "Muscles/Torso"; </tag>
+     </item>
+      <item>
+        Head Muscles
+        <tag> out = "Muscles/Head"; </tag>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="skeletonWords">
+    <one-of>
+      <item>
+        Arm
+        <ruleref uri="#skeletonAliases" />
+        <tag> out = ["Skeleton/Arms/Left", "Skeleton/Arms/Right"]; </tag>
+      </item>
+      <item>
+        Left Arm <ruleref uri="#skeletonAliases" />
+        <tag> out = "Skeleton/Arms/Left";</tag>
+      </item>
+      <item>
+        Right Arm <ruleref uri="#skeletonAliases" />
+        <tag> out = "Skeleton/Arms/Right";</tag>
+      </item>
+      <item>
+        Leg <ruleref uri="#skeletonAliases" />
+        <tag> out = ["Skeleton/Legs/Left", "Skeleton/Legs/Right"]; </tag>
+      </item>
+      <item>
+        Left Leg <ruleref uri="#skeletonAliases" />
+        <tag> out = "Skeleton/Legs/Left";</tag>
+      </item>
+      <item>
+        Right Leg <ruleref uri="#skeletonAliases" />
+        <tag> out = "Skeleton/Legs/Right";</tag>
+      </item>
+      <item>
+        Torso <ruleref uri="#skeletonAliases" />
+        <tag> out = "Skeleton/Torso";</tag>
+      </item>
+      <item>
+        Head <ruleref uri="#skeletonAliases" />
+        <tag> out = "Skeleton/Head";</tag>
+      </item>
+      <item>
+        Pelvic <ruleref uri="#skeletonAliases" />
+        <tag> out = ["Skeleton/Legs/Left/Hip", "Skeleton/Legs/Right/Hip", "Skeleton/Torso/Sacrum"]; </tag>
+      </item>
+      <item>
+        rib cage
+        <tag> out = "Skeleton/Torso/Ribs"; </tag>
+      </item>
+      <item>
+        <one-of>
+          <item> c spine </item>
+          <item> cervical spine </item>
+        </one-of>
+        <tag> out = "Skeleton/Head/Cervical Spine"; </tag>
+      </item>
+      <item>
+        <one-of>
+          <item> t spine </item>
+          <item> thoracic spine </item>
+        </one-of>
+        <tag> out = "Skeleton/Torso/Thoracic Spine"; </tag>
+      </item>
+      <item>
+        <one-of>
+          <item> lumbar spine </item>
+        </one-of>
+        <tag> out = "Skeleton/Torso/Lumbar Spine"; </tag>
+      </item>
+    </one-of>
+  </rule>
+  
+  <rule id="skeletonAliases">
+    <one-of>
+      <item> skeleton </item>
+      <item> bones </item>
+      <item> skeletal system </item>
+    </one-of>
+  </rule>
+
+  <rule id="circulationAliases">
+    <one-of>
+      <item> circulation </item>
+      <item> vascular system </item>
+    </one-of>
+  </rule>
+  
+  <rule id="circulationWords">
+    <one-of>
+      <item>
+        Arteries
+        <tag> out = "Circulation/Arteries"; </tag>
+      </item>
+      <item>
+        Veins
+        <tag> out = "Circulation/Veins"; </tag>
+      </item>
+    </one-of>
+    
+  </rule>
+  
+</grammar>
